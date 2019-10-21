@@ -1,5 +1,6 @@
 package com.sas.msdemo.controller;
 
+import com.sas.msdemo.aspect.Loggable;
 import com.sas.msdemo.dto.Room;
 import com.sas.msdemo.repository.RoomRepository;
 import io.swagger.annotations.Api;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @RestController
@@ -20,12 +22,14 @@ public class RoomController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ApiOperation(value = "Get all rooms", notes = "Get all rooms in the system", nickname = "getRooms")
+    @Loggable
     public List<Room> findAllRooms() {
         return (List<Room>) this.roomRepository.findAll();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     @ApiOperation(value = "Get by Room Number", notes = "Get details of a room by Room Number", nickname = "getRoomsById")
+    @Loggable
     public Room findRoomsByID(@PathVariable("id") String roomNumber) {
         return this.roomRepository.findByRoomNumber(roomNumber);
     }
