@@ -15,3 +15,5 @@ buildNumber.properties
 */.settings
 */*.project
 */*.iml
+.vscode/
+*.classpath
