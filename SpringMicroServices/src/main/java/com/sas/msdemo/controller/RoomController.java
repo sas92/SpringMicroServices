@@ -73,7 +73,7 @@ public class RoomController {
             message = "There is problem. Please try again.";
             e.printStackTrace();
         } finally {
-            context.close();
+            //context.close();
         }
         return message;
     }
