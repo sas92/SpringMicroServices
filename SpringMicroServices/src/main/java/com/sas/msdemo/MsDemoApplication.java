@@ -1,5 +1,7 @@
 package com.sas.msdemo;
 
+import java.util.ArrayList;
+
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -13,6 +15,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -49,7 +52,7 @@ public class MsDemoApplication {
                 .paths(PathSelectors.any()).build().apiInfo(new ApiInfo("Room Services",
                         "A set of services to provide data access to rooms", "1.0.0", null,
                         new Contact("Saswata Adhya", "", ""),
-                        null, null, null));
+                        "", "",  new ArrayList<VendorExtension>()));
     }
 
     public static void main(String[] args) {
