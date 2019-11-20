@@ -1,28 +1,17 @@
 package com.sas.msdemo.service;
 
-import java.util.concurrent.CompletableFuture;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
+import com.sas.msdemo.dto.Room;
 import org.springframework.stereotype.Service;
 
-import com.sas.msdemo.dto.Room;
-import com.sas.msdemo.repository.RoomRepository;
+import java.util.concurrent.CompletableFuture;
 
-@Service
-public class AsyncService {
-	@Autowired
-	private RoomRepository roomRepository;
+/**
+ * @author sas on 11/20/2019
+ * @project MSDemo
+ */
 
-	@Async("asyncExecutor")
-	public CompletableFuture<Iterable<Room>> getAllRooms() throws InterruptedException {
-		Thread.sleep(2000); // Intentional delay
-		return CompletableFuture.completedFuture(roomRepository.findAll());
-	}
+public interface AsyncService {
+    public CompletableFuture<Iterable<Room>> getAllRooms() throws InterruptedException;
 
-	@Async("asyncExecutor")
-	public CompletableFuture<Room> getRoomById(String roomNumber) throws InterruptedException {
-		Thread.sleep(1000); // Intentional delay
-		return CompletableFuture.completedFuture(roomRepository.findByRoomNumber(roomNumber));
-	}
+    public CompletableFuture<Room> getRoomById(String roomNumber) throws InterruptedException;
 }
