@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * @author Saswata_Adhya
+ * @apiNote https://www.linkedin.com/learning/spring-5-0-and-spring-boot-2-0-new-features/exception-and-response-status?u=2113185
+ */
+
 @RestController
 @RequestMapping("error")
 public class DemoExceptionController {
