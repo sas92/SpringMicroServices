@@ -7,6 +7,7 @@ Generic sample of Spring Boot project merging with Spring Cloud, Rabbit Message 
 * Start service - rabbitmq-service.bat start
 * Stop service - rabbitmqctl.bat stop
 * Enable RabbitMQ Management - rabbitmq-plugins enable rabbitmq_management
+* Generate Keystore - keytool -genkey -alias sas -keyalg RSA -keystore D:\SasWorkspace\sts\MSDemo\SpringMicroServices\src\main\resources\msdemoKeystore
 
 ### Local URLs
 * Eureka Server - http://localhost:8761/
