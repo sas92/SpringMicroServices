@@ -21,3 +21,4 @@ Generic sample of Spring Boot project merging with Spring Cloud, Rabbit Message 
 * https://www.linkedin.com/learning/spring-boot-essential-training
 * https://www.rabbitmq.com/install-windows-manual.html
 * https://www.concretepage.com/spring-4/spring-security-thymeleaf-login-logout
+* https://www.linkedin.com/learning/spring-5-0-and-spring-boot-2-0-new-features
